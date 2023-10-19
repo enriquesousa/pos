@@ -1,0 +1,14 @@
+{
+	"files": [
+		{
+			"path": "resources/views/admin/admin_profile_view.blade.php",
+			"bookmarks": [
+				{
+					"line": 33,
+					"column": 24,
+					"label": "Imagen Insertar no_image admin"
+				}
+			]
+		}
+	]
+}
