@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+
 use Illuminate\Support\Facades\Auth;
+use App\Models\User;
 
 class AdminController extends Controller
 {
@@ -21,5 +23,17 @@ class AdminController extends Controller
     public function AdminLogoutPage(){
        return view('admin.admin_logout');
     }
+
+    // AdminProfile
+    public function AdminProfile(){
+
+        // Para saber que usuario esta logueado
+        $id = Auth::user()->id;
+        $adminData = User::find($id);
+
+        return view('admin.admin_profile_view', compact('adminData'));
+    }
+
+    
 
 }
