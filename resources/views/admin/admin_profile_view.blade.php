@@ -1,6 +1,9 @@
 @extends('admin_dashboard')
 @section('admin')
 
+{{-- Jquery CDN Para poder usar JS --}}
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+
 <div class="content">
 
     <!-- Start Content-->
@@ -113,7 +116,7 @@
                                     <div class="col-md-12">
                                         <div class="mb-3">
                                             <label for="example-fileinput" class="form-label">Selecciona Imagen</label>
-                                            <input type="file" id="example-fileinput" class="form-control">
+                                            <input type="file" name="photo" id="image" class="form-control">
                                         </div>
                                     </div> <!-- end col -->
 
@@ -121,7 +124,7 @@
                                     <div class="col-md-12">
                                         <div class="mb-3">
                                             <label for="example-fileinput" class="form-label"></label>
-                                            <img src="{{ (!empty($adminData->photo) ? url('upload/admin_images/'.$adminData->photo) : url('upload/no_image.jpg')) }}" class="rounded-circle avatar-lg img-thumbnail" alt="profile-image">
+                                            <img id="showImage" src="{{ (!empty($adminData->photo) ? url('upload/admin_images/'.$adminData->photo) : url('upload/no_image.jpg')) }}" class="rounded-circle avatar-lg img-thumbnail" alt="profile-image">
                                         </div>
                                     </div> <!-- end col -->
 
@@ -147,6 +150,19 @@
 
 </div> <!-- content -->
 
+{{-- JS para el manejo de imagenes --}}
+<script type="text/javascript">
+	
+	$(document).ready(function(){
+		$('#image').change(function(e){
+			var reader = new FileReader();
+			reader.onload =  function(e){
+				$('#showImage').attr('src',e.target.result);
+			}
+			reader.readAsDataURL(e.target.files['0']);
+		});
+	});
+</script>
 
 
 @endsection
