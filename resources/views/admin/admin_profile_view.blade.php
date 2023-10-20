@@ -34,7 +34,7 @@
                     <div class="card-body">
 
                         {{-- Imagen de Admin --}}
-                        <img src="{{ (!empty($adminData->photo) ? url('upload/admin_images/'.$adminData->photo) : url('upload/no_image.jpg')) }}" class="rounded-circle avatar-lg img-thumbnail"
+                        <img src="{{ (!empty($adminData->photo) ? url('upload/admin_image/'.$adminData->photo) : url('upload/no_image.jpg')) }}" class="rounded-circle avatar-lg img-thumbnail"
                         alt="profile-image">
 
                         {{-- Nombre de Admin --}}
@@ -83,7 +83,10 @@
 
                         {{-- Editar datos del Perfil --}}
                         <div class="tab-pane" id="settings">
-                            <form>
+
+                            <form method="post" action="{{ route('admin.profile.store') }}" enctype="multipart/form-data">
+                                @csrf
+
                                 <h5 class="mb-4 text-uppercase"><i class="mdi mdi-account-circle me-1"></i> Editar Info</h5>
 
                                 <div class="row">
@@ -124,7 +127,7 @@
                                     <div class="col-md-12">
                                         <div class="mb-3">
                                             <label for="example-fileinput" class="form-label"></label>
-                                            <img id="showImage" src="{{ (!empty($adminData->photo) ? url('upload/admin_images/'.$adminData->photo) : url('upload/no_image.jpg')) }}" class="rounded-circle avatar-lg img-thumbnail" alt="profile-image">
+                                            <img id="showImage" src="{{ (!empty($adminData->photo) ? url('upload/admin_image/'.$adminData->photo) : url('upload/no_image.jpg')) }}" class="rounded-circle avatar-lg img-thumbnail" alt="profile-image">
                                         </div>
                                     </div> <!-- end col -->
 
@@ -135,6 +138,7 @@
                                     <button type="submit" class="btn btn-success waves-effect waves-light mt-2"><i class="mdi mdi-content-save"></i> Guardar</button>
                                 </div>
                             </form>
+
                         </div>
                         <!-- end Editar datos del Perfil-->
 
