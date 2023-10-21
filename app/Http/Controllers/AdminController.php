@@ -10,7 +10,8 @@ use App\Models\User;
 class AdminController extends Controller
 {
     // AdminDestroy
-    public function AdminDestroy(Request $request){
+    public function AdminDestroy(Request $request)
+    {
         Auth::guard('web')->logout();
         $request->session()->invalidate();
         $request->session()->regenerateToken();
@@ -20,12 +21,14 @@ class AdminController extends Controller
     }
 
     // AdminLogoutPage
-    public function AdminLogoutPage(){
-       return view('admin.admin_logout');
+    public function AdminLogoutPage()
+    {
+        return view('admin.admin_logout');
     }
 
     // AdminProfile
-    public function AdminProfile(){
+    public function AdminProfile()
+    {
 
         // Para saber que usuario esta logueado
         $id = Auth::user()->id;
@@ -35,8 +38,9 @@ class AdminController extends Controller
     }
 
     // AdminProfileStore
-    public function AdminProfileStore(Request $request){
-       
+    public function AdminProfileStore(Request $request)
+    {
+
         // Para saber que usuario esta logueado
         $id = Auth::user()->id;
         $data = User::find($id);
@@ -48,17 +52,20 @@ class AdminController extends Controller
         // actualizar imagen
         if ($request->file('photo')) {
             $file = $request->file('photo');
-            @unlink(public_path('upload/admin_image/'.$data->photo));
-            $filename = date('YmdHi').$file->getClientOriginalName();
-            $file->move(public_path('upload/admin_image'),$filename);
+            @unlink(public_path('upload/admin_image/' . $data->photo));
+            $filename = date('YmdHi') . $file->getClientOriginalName();
+            $file->move(public_path('upload/admin_image'), $filename);
             $data['photo'] = $filename;
-         }
-             
-         $data->save();
+        }
 
-         return redirect()->back()->with('message', 'Admin Profile Updated Successfully');
+        $data->save();
+
+        $notification = array(
+            'message' => 'Perfil actualizado con éxito',
+            'alert-type' => 'success'
+        );
+
+        return redirect()->back()->with($notification);
 
     }
-    
-
 }

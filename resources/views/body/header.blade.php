@@ -185,14 +185,26 @@
                 </div>
             </li>
 
+
+            {{-- Codigo para poder traer datos del usuario para desplegar foto de perfil y nombre de usuario --}}
+            @php
+                $id = Auth::user()->id;
+                $adminData = App\Models\User::find($id);
+            @endphp
+
             {{-- Usuario que esta Login y su Dropdown Menu --}}
             <li class="dropdown notification-list topbar-dropdown">
+
                 <a class="nav-link dropdown-toggle nav-user me-0 waves-effect waves-light" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
-                    <img src="{{ asset('backend/assets/images/users/user-1.jpg') }}" alt="user-image" class="rounded-circle">
-                    <span class="pro-user-name ms-1">
-                        Geneva <i class="mdi mdi-chevron-down"></i> 
-                    </span>
+                    
+                    {{-- Foto de perfil --}}
+                    <img src="{{ (!empty($adminData->photo)) ? url('upload/admin_image/'.$adminData->photo) : url('upload/no_image.jpg') }}" alt="user-image" class="rounded-circle">
+
+                    {{-- nombre de usuario --}}
+                    <span class="pro-user-name ms-1">{{ $adminData->name }}<i class="mdi mdi-chevron-down"></i></span>
+
                 </a>
+
                 <div class="dropdown-menu dropdown-menu-end profile-dropdown ">
                     <!-- item-->
                     <div class="dropdown-header noti-title">

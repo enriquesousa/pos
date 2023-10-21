@@ -19,6 +19,41 @@
 					"label": "JS para el manejo de imagenes"
 				}
 			]
+		},
+		{
+			"path": "app/Http/Controllers/AdminController.php",
+			"bookmarks": [
+				{
+					"line": 62,
+					"column": 8,
+					"label": "Mostrar Toaster Notification Toastr"
+				}
+			]
+		},
+		{
+			"path": "resources/views/admin_dashboard.blade.php",
+			"bookmarks": [
+				{
+					"line": 28,
+					"column": 8,
+					"label": "Toastr Code toster en Head"
+				},
+				{
+					"line": 93,
+					"column": 31,
+					"label": "Toastr Code toster"
+				}
+			]
+		},
+		{
+			"path": "resources/views/body/header.blade.php",
+			"bookmarks": [
+				{
+					"line": 199,
+					"column": 39,
+					"label": "Desplegar Foto / Imagen de perfil"
+				}
+			]
 		}
 	]
 }
