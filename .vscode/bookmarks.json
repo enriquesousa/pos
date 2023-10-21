@@ -24,7 +24,7 @@
 			"path": "app/Http/Controllers/AdminController.php",
 			"bookmarks": [
 				{
-					"line": 62,
+					"line": 67,
 					"column": 8,
 					"label": "Mostrar Toaster Notification Toastr"
 				}
