@@ -214,7 +214,7 @@
                     <!-- item-->
                     <a href="{{ route('admin.profile') }}" class="dropdown-item notify-item">
                         <i class="fe-user"></i>
-                        <span>My Account</span>
+                        <span>Mi Perfil</span>
                     </a>
 
                     <!-- item-->
@@ -224,9 +224,9 @@
                     </a>
 
                     <!-- item-->
-                    <a href="javascript:void(0);" class="dropdown-item notify-item">
+                    <a href="{{ route('change.password') }}" class="dropdown-item notify-item">
                         <i class="fe-lock"></i>
-                        <span>Lock Screen</span>
+                        <span>Cambiar Contraseña</span>
                     </a>
 
                     <div class="dropdown-divider"></div>
