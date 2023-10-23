@@ -39,12 +39,12 @@
 			"path": "resources/views/admin_dashboard.blade.php",
 			"bookmarks": [
 				{
-					"line": 28,
+					"line": 35,
 					"column": 8,
 					"label": "Toastr Code toster en Head"
 				},
 				{
-					"line": 93,
+					"line": 100,
 					"column": 31,
 					"label": "Toastr Code toster"
 				}

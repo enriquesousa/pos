@@ -35,7 +35,7 @@
                     <div class="collapse" id="sidebarEcommerce">
                         <ul class="nav-second-level">
                             <li>
-                                <a href="ecommerce-dashboard.html">Lista Empleados</a>
+                                <a href="{{ route('all.employee') }}">Lista Empleados</a>
                             </li>
                             <li>
                                 <a href="ecommerce-products.html">Agregar Empleado</a>
