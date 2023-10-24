@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Oct 18, 2023 at 01:03 AM
+-- Generation Time: Oct 24, 2023 at 04:42 PM
 -- Server version: 10.11.4-MariaDB-1~deb12u1
 -- PHP Version: 8.2.7
 
@@ -20,6 +20,35 @@ SET time_zone = "+00:00";
 --
 -- Database: `pos`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `employees`
+--
+
+CREATE TABLE `employees` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `name` varchar(255) NOT NULL,
+  `email` varchar(255) NOT NULL,
+  `phone` varchar(255) NOT NULL,
+  `address` varchar(255) DEFAULT NULL,
+  `experience` varchar(255) DEFAULT NULL,
+  `image` varchar(255) NOT NULL,
+  `salary` varchar(255) DEFAULT NULL,
+  `vacation` varchar(255) DEFAULT NULL,
+  `city` varchar(255) DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `employees`
+--
+
+INSERT INTO `employees` (`id`, `name`, `email`, `phone`, `address`, `experience`, `image`, `salary`, `vacation`, `city`, `created_at`, `updated_at`) VALUES
+(1, 'Camden Landry', 'mynejoq@mailinator.com', '+1 (411) 804-5305', 'ANT CARR A CHAPALA NUM 2748, ALAMO INDUSTRIAL, 45560', '2 Años', 'upload/employee/1780653224833182.jpg', '5600', '2', 'Guadalajara, Jalisco', '2023-10-24 23:00:47', NULL),
+(2, 'Declan Joyner', 'soxu@mailinator.com', '+1 (296) 566-5094', 'ARTICULO 27 NO. 4100 7, A. CONSTITUCION', '4 Años', 'upload/employee/1780653839278842.jpg', '25000', '3', 'Tijuana, BC', '2023-10-24 23:10:32', NULL);
 
 -- --------------------------------------------------------
 
@@ -57,7 +86,8 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 (1, '2014_10_12_000000_create_users_table', 1),
 (2, '2014_10_12_100000_create_password_reset_tokens_table', 1),
 (3, '2019_08_19_000000_create_failed_jobs_table', 1),
-(4, '2019_12_14_000001_create_personal_access_tokens_table', 1);
+(4, '2019_12_14_000001_create_personal_access_tokens_table', 1),
+(5, '2023_10_23_040402_create_employees_table', 2);
 
 -- --------------------------------------------------------
 
@@ -114,12 +144,18 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `name`, `email`, `phone`, `photo`, `email_verified_at`, `password`, `remember_token`, `created_at`, `updated_at`) VALUES
-(1, 'Admin', 'admin@gmail.com', NULL, NULL, NULL, '$2y$10$qaRyWz.5.GH5HiF1zxktAehEscQ/ZRUQAOWRqA3A7r5yZd/HbTRgO', NULL, '2023-10-17 09:54:12', '2023-10-17 09:54:12'),
+(1, 'Admin', 'admin@gmail.com', '5556887889', '202310230353patrick2.jpg', NULL, '$2y$10$/oWur/lIuWiN48s5T25AROsrNFH6kFCG4LhPb7q2aRtFKbc2zLtCa', NULL, '2023-10-17 09:54:12', '2023-10-23 22:59:00'),
 (2, 'Enrique', 'enrique.sousa@gmail.com', '6641880604', NULL, NULL, '$2y$10$WaStHBT0BRFmFoVRV04ZPuP3uFOwLDa10iIK8AEq./JX6l7DSJ1bu', NULL, '2023-10-18 01:34:38', '2023-10-18 01:34:38');
 
 --
 -- Indexes for dumped tables
 --
+
+--
+-- Indexes for table `employees`
+--
+ALTER TABLE `employees`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `failed_jobs`
@@ -160,6 +196,12 @@ ALTER TABLE `users`
 --
 
 --
+-- AUTO_INCREMENT for table `employees`
+--
+ALTER TABLE `employees`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
 -- AUTO_INCREMENT for table `failed_jobs`
 --
 ALTER TABLE `failed_jobs`
@@ -169,7 +211,7 @@ ALTER TABLE `failed_jobs`
 -- AUTO_INCREMENT for table `migrations`
 --
 ALTER TABLE `migrations`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `personal_access_tokens`
