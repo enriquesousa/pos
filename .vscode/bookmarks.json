@@ -61,6 +61,16 @@
 			]
 		},
 		{
+			"path": "app/Http/Controllers/Backend/EmployeeController.php",
+			"bookmarks": [
+				{
+					"line": 27,
+					"column": 44,
+					"label": "Validation en controller con mensajes custom"
+				}
+			]
+		},
+		{
 			"path": "resources/views/backend/employee/all_employee.blade.php",
 			"bookmarks": [
 				{

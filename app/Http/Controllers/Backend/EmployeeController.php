@@ -31,7 +31,22 @@ class EmployeeController extends Controller
             'phone' => 'required|max:200',
             'address' => 'required|max:400',
             'salary' => 'required|max:200',
-            'vacation' => 'required|max:200',  
+            'vacation' => 'required|max:200',
+            'city' => 'required|max:200',
+            'experience' => 'required', 
+            'image' => 'required',   
+        ],
+    
+        [
+            'name.required' => 'El nombre es requerido',
+            'email.required' => 'El correo es requerido',
+            'phone.required' => 'El teléfono es requerido',
+            'address.required' => 'La dirección es requerida',
+            'salary.required' => 'El salario es requerido',
+            'vacation.required' => 'La vacación es requerida',
+            'city.required' => 'La ciudad es requerida',
+            'experience.required' => 'La experiencia es requerida', 
+            'image.required' => 'La imagen es requerida',   
         ]);
 
         $image = $request->file('image');

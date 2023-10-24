@@ -1,6 +1,5 @@
 @extends('admin_dashboard')
 @section('admin')
-
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
 
     <div class="content">
@@ -39,11 +38,11 @@
 
                             <div class="tab-pane" id="settings">
 
-                                <form method="post" action="{{ route('employee.store') }}"
-                                    enctype="multipart/form-data">
+                                <form method="post" action="{{ route('employee.store') }}" enctype="multipart/form-data">
                                     @csrf
 
-                                    <h5 class="mb-4 text-uppercase"><i class="mdi mdi-account-circle me-1"></i> Agregar Empleado
+                                    <h5 class="mb-4 text-uppercase"><i class="mdi mdi-account-circle me-1"></i> Agregar
+                                        Empleado
                                     </h5>
 
                                     <div class="row">
@@ -63,7 +62,8 @@
                                         {{-- Correo Electrónico Empleado 'email' --}}
                                         <div class="col-md-6">
                                             <div class="mb-3">
-                                                <label for="firstname" class="form-label">Correo Electrónico Empleado</label>
+                                                <label for="firstname" class="form-label">Correo Electrónico
+                                                    Empleado</label>
                                                 <input type="email" name="email"
                                                     class="form-control @error('email') is-invalid @enderror">
                                                 @error('email')
@@ -100,15 +100,20 @@
                                         {{-- Experiencia de empleado 'experience' --}}
                                         <div class="col-md-6">
                                             <div class="mb-3">
-                                                <label for="firstname" class="form-label">Experiencia de empleado</label>
-                                                <select name="experience" class="form-select" id="example-select">
-                                                    <option selected="">Seleccionar Experiencia</option>
+                                                <label for="firstname" class="form-label">Experiencia de empleado en Años</label>
+                                                <select name="experience"
+                                                    class="form-select @error('experience') is-invalid @enderror"
+                                                    id="example-select">
+                                                    <option selected disabled>Seleccionar Experiencia</option>
                                                     <option value="1 Año">1 Año</option>
                                                     <option value="2 Años">2 Años</option>
                                                     <option value="3 Años">3 Años</option>
                                                     <option value="4 Años">4 Años</option>
                                                     <option value="5 Años">5 Años</option>
                                                 </select>
+                                                @error('experience')
+                                                    <span class="text-danger"> {{ $message }} </span>
+                                                @enderror
 
                                             </div>
                                         </div>
@@ -157,7 +162,10 @@
                                         <div class="col-md-12">
                                             <div class="mb-3">
                                                 <label for="example-fileinput" class="form-label">Foto de Empleado</label>
-                                                <input type="file" name="image" id="image" class="form-control">
+                                                <input type="file" name="image" id="image" class="form-control @error('image') is-invalid @enderror">
+                                                @error('image')
+                                                    <span class="text-danger"> {{ $message }} </span>
+                                                @enderror
                                             </div>
                                         </div> <!-- end col -->
 
@@ -210,5 +218,4 @@
             });
         });
     </script>
-    
 @endsection
