@@ -38,7 +38,8 @@
                             <!-- end timeline content-->
 
                             <div class="tab-pane" id="settings">
-                                <form method="post" action="{{ route('admin.profile.store') }}"
+
+                                <form method="post" action="{{ route('employee.store') }}"
                                     enctype="multipart/form-data">
                                     @csrf
 
@@ -47,7 +48,7 @@
 
                                     <div class="row">
 
-                                        {{-- Nombre Empleado --}}
+                                        {{-- Nombre Empleado 'name' --}}
                                         <div class="col-md-6">
                                             <div class="mb-3">
                                                 <label for="firstname" class="form-label">Nombre Empleado</label>
@@ -59,7 +60,7 @@
                                             </div>
                                         </div>
 
-                                        {{-- Correo Electrónico Empleado --}}
+                                        {{-- Correo Electrónico Empleado 'email' --}}
                                         <div class="col-md-6">
                                             <div class="mb-3">
                                                 <label for="firstname" class="form-label">Correo Electrónico Empleado</label>
@@ -71,7 +72,7 @@
                                             </div>
                                         </div>
 
-                                        {{-- Teléfono Empleado --}}
+                                        {{-- Teléfono Empleado 'phone' --}}
                                         <div class="col-md-6">
                                             <div class="mb-3">
                                                 <label for="firstname" class="form-label">Teléfono Empleado</label>
@@ -83,7 +84,7 @@
                                             </div>
                                         </div>
 
-                                        {{-- Dirección Empleado --}}
+                                        {{-- Dirección Empleado 'address' --}}
                                         <div class="col-md-6">
                                             <div class="mb-3">
                                                 <label for="firstname" class="form-label">Dirección Empleado</label>
@@ -96,24 +97,24 @@
                                         </div>
 
 
-                                        {{-- Experiencia de empleado --}}
+                                        {{-- Experiencia de empleado 'experience' --}}
                                         <div class="col-md-6">
                                             <div class="mb-3">
                                                 <label for="firstname" class="form-label">Experiencia de empleado</label>
                                                 <select name="experience" class="form-select" id="example-select">
                                                     <option selected="">Seleccionar Experiencia</option>
-                                                    <option value="1 Year">1 Año</option>
-                                                    <option value="2 Year">2 Años</option>
-                                                    <option value="3 Year">3 Años</option>
-                                                    <option value="4 Year">4 Años</option>
-                                                    <option value="5 Year">5 Años</option>
+                                                    <option value="1 Año">1 Año</option>
+                                                    <option value="2 Años">2 Años</option>
+                                                    <option value="3 Años">3 Años</option>
+                                                    <option value="4 Años">4 Años</option>
+                                                    <option value="5 Años">5 Años</option>
                                                 </select>
 
                                             </div>
                                         </div>
 
 
-                                        {{-- Sueldo Empleado --}}
+                                        {{-- Sueldo Empleado 'salary' --}}
                                         <div class="col-md-6">
                                             <div class="mb-3">
                                                 <label for="firstname" class="form-label">Sueldo Empleado</label>
@@ -126,7 +127,7 @@
                                         </div>
 
 
-                                        {{-- Vacaciones Empleado --}}
+                                        {{-- Vacaciones Empleado 'vacation' --}}
                                         <div class="col-md-6">
                                             <div class="mb-3">
                                                 <label for="firstname" class="form-label">Vacaciones Empleado</label>
@@ -139,7 +140,7 @@
                                         </div>
 
 
-                                        {{-- Ciudad Empleado --}}
+                                        {{-- Ciudad Empleado 'city' --}}
                                         <div class="col-md-6">
                                             <div class="mb-3">
                                                 <label for="firstname" class="form-label">Ciudad Empleado</label>
@@ -152,8 +153,7 @@
                                         </div>
 
 
-
-                                        {{-- Foto de Empleado --}}
+                                        {{-- Foto de Empleado 'image' --}}
                                         <div class="col-md-12">
                                             <div class="mb-3">
                                                 <label for="example-fileinput" class="form-label">Foto de Empleado</label>
@@ -172,7 +172,6 @@
                                         </div> <!-- end col -->
 
 
-
                                     </div> <!-- end row -->
 
 
@@ -182,6 +181,7 @@
                                                 class="mdi mdi-content-save"></i> Guardar</button>
                                     </div>
                                 </form>
+
                             </div>
                             <!-- end settings content-->
 

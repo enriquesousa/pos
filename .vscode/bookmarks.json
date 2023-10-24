@@ -59,6 +59,26 @@
 					"label": "Desplegar Foto / Imagen de perfil"
 				}
 			]
+		},
+		{
+			"path": "resources/views/backend/employee/all_employee.blade.php",
+			"bookmarks": [
+				{
+					"line": 54,
+					"column": 46,
+					"label": "money dinero en blade"
+				}
+			]
+		},
+		{
+			"path": "app/Providers/AppServiceProvider.php",
+			"bookmarks": [
+				{
+					"line": 23,
+					"column": 41,
+					"label": "convertir a formato money dinero"
+				}
+			]
 		}
 	]
 }

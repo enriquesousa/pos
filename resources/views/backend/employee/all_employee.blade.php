@@ -52,7 +52,7 @@
                                         <td><img src="{{ asset($item->image) }}" style="width: 50px; height: 40px;"></td>
                                         <td>{{ $item->email }}</td>
                                         <td>{{ $item->phone }}</td>
-                                        <td>$@convert($item->salary)</td>
+                                        <td>$ @convert($item->salary)</td>
                                         <td>
                                             <a href="" class="btn btn-blue rounded-pill waves-effect waves-light">Editar</a>
                                             <a href="" class="btn btn-danger rounded-pill waves-effect waves-light">Eliminar</a>
