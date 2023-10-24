@@ -13,7 +13,7 @@
                 <div class="page-title-box">
                     <div class="page-title-right">
                         <ol class="breadcrumb m-0">
-                            <a href="" class="btn btn-primary rounded-pill waves-effect waves-light">Agregar Empleado</a>
+                            <a href="{{ route('employee.add') }}" class="btn btn-primary rounded-pill waves-effect waves-light">Agregar Empleado</a>
                         </ol>
                     </div>
                     <h4 class="page-title">Lista de Empleados</h4>

@@ -38,7 +38,7 @@
                                 <a href="{{ route('all.employee') }}">Lista Empleados</a>
                             </li>
                             <li>
-                                <a href="ecommerce-products.html">Agregar Empleado</a>
+                                <a href="{{ route('employee.add') }}">Agregar Empleado</a>
                             </li>
                         </ul>
                     </div>

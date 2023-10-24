@@ -52,7 +52,7 @@ Route::middleware(['auth'])->group(function () {
     // Employee Rutas
     Route::controller(EmployeeController::class)->group(function () {
         Route::get('/all/employee', 'EmployeeList')->name('all.employee');
-        // Route::get('/employee/add', 'EmployeeAdd')->name('employee.add');
+        Route::get('/employee/add', 'EmployeeAdd')->name('employee.add');
         // Route::post('/employee/store', 'EmployeeStore')->name('employee.store');
         // Route::get('/employee/edit/{id}', 'EmployeeEdit')->name('employee.edit');
         // Route::post('/employee/update/{id}', 'EmployeeUpdate')->name('employee.update');
