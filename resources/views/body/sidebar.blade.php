@@ -27,12 +27,12 @@
 
                 {{-- Control de Empleados --}}
                 <li>
-                    <a href="#sidebarEcommerce" data-bs-toggle="collapse">
+                    <a href="#sidebarEmpleados" data-bs-toggle="collapse">
                         <i class="mdi mdi-account-multiple-outline"></i>
                         <span> Control Empleados </span>
                         <span class="menu-arrow"></span>
                     </a>
-                    <div class="collapse" id="sidebarEcommerce">
+                    <div class="collapse" id="sidebarEmpleados">
                         <ul class="nav-second-level">
                             <li>
                                 <a href="{{ route('all.employee') }}">Lista Empleados</a>
@@ -43,6 +43,27 @@
                         </ul>
                     </div>
                 </li>
+
+
+                {{-- Control de Clientes --}}
+                <li>
+                    <a href="#sidebarClientes" data-bs-toggle="collapse">
+                        <i class="mdi mdi-account-multiple-outline"></i>
+                        <span> Control Clientes </span>
+                        <span class="menu-arrow"></span>
+                    </a>
+                    <div class="collapse" id="sidebarClientes">
+                        <ul class="nav-second-level">
+                            <li>
+                                <a href="{{ route('all.customer') }}">Lista Clientes</a>
+                            </li>
+                            <li>
+                                <a href="{{ route('employee.add') }}">Agregar Cliente</a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+
 
                 {{-- CRM --}}
                 <li>

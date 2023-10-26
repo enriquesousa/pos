@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\Backend\EmployeeController;
+use App\Http\Controllers\Backend\CustomerController;
 
 
 
@@ -49,7 +50,7 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/change/password', [AdminController::class, 'ChangePassword'])->name('change.password');
     Route::post('/update/password', [AdminController::class, 'UpdatePassword'])->name('update.password');
 
-    // Employee Rutas
+    // Rutas Employees
     Route::controller(EmployeeController::class)->group(function () {
         Route::get('/all/employee', 'EmployeeList')->name('all.employee');
         Route::get('/employee/add', 'EmployeeAdd')->name('employee.add');
@@ -58,6 +59,17 @@ Route::middleware(['auth'])->group(function () {
         Route::post('/employee/update', 'EmployeeUpdate')->name('employee.update');
         Route::get('/employee/delete/{id}', 'EmployeeDelete')->name('employee.delete');    
     });
+
+    // Rutas Customers
+    Route::controller(CustomerController::class)->group(function () {
+        Route::get('/all/customer', 'CustomerList')->name('all.customer');
+        // Route::get('/employee/add', 'EmployeeAdd')->name('employee.add');
+        // Route::post('/employee/store', 'EmployeeStore')->name('employee.store');
+        // Route::get('/employee/edit/{id}', 'EmployeeEdit')->name('employee.edit');
+        // Route::post('/employee/update', 'EmployeeUpdate')->name('employee.update');
+        // Route::get('/employee/delete/{id}', 'EmployeeDelete')->name('employee.delete');    
+    });
+
 
 
 });
