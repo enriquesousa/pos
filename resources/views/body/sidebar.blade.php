@@ -58,7 +58,7 @@
                                 <a href="{{ route('all.customer') }}">Lista Clientes</a>
                             </li>
                             <li>
-                                <a href="{{ route('employee.add') }}">Agregar Cliente</a>
+                                <a href="{{ route('customer.add') }}">Agregar Cliente</a>
                             </li>
                         </ul>
                     </div>

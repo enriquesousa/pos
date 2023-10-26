@@ -63,8 +63,8 @@ Route::middleware(['auth'])->group(function () {
     // Rutas Customers
     Route::controller(CustomerController::class)->group(function () {
         Route::get('/all/customer', 'CustomerList')->name('all.customer');
-        // Route::get('/employee/add', 'EmployeeAdd')->name('employee.add');
-        // Route::post('/employee/store', 'EmployeeStore')->name('employee.store');
+        Route::get('/customer/add', 'CustomerAdd')->name('customer.add');
+        Route::post('/customer/store', 'CustomerStore')->name('customer.store');
         // Route::get('/employee/edit/{id}', 'EmployeeEdit')->name('employee.edit');
         // Route::post('/employee/update', 'EmployeeUpdate')->name('employee.update');
         // Route::get('/employee/delete/{id}', 'EmployeeDelete')->name('employee.delete');    
