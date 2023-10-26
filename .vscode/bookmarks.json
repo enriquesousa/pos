@@ -64,7 +64,7 @@
 			"path": "app/Http/Controllers/Backend/EmployeeController.php",
 			"bookmarks": [
 				{
-					"line": 27,
+					"line": 30,
 					"column": 44,
 					"label": "Validation en controller con mensajes custom"
 				}

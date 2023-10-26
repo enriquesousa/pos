@@ -37,8 +37,12 @@
                             <!-- end timeline content-->
 
                             <div class="tab-pane" id="settings">
-                                <form method="post" action="{{ route('employee.store') }}" enctype="multipart/form-data">
+
+                                <form method="post" action="{{ route('employee.update') }}" enctype="multipart/form-data">
                                     @csrf
+
+                                    <input type="hidden" name="id" value="{{ $employee->id }}">
+                                    <input type="hidden" name="imagen_original" value="{{ $employee->image }}">
 
                                     <h5 class="mb-4 text-uppercase"><i class="mdi mdi-account-circle me-1"></i> Editar Empleado</h5>
 
@@ -104,19 +108,19 @@
                                                     class="form-select @error('experience') is-invalid @enderror"
                                                     id="example-select">
                                                     <option selected disabled>Seleccionar Años de Experiencia</option>
-                                                    <option value="1 Year"
+                                                    <option value="1 Año"
                                                         {{ $employee->experience == '1 Año' ? 'selected' : '' }}>1 Año
                                                     </option>
-                                                    <option value="2 Year"
+                                                    <option value="2 Años"
                                                         {{ $employee->experience == '2 Años' ? 'selected' : '' }}>2 Años
                                                     </option>
-                                                    <option value="3 Year"
+                                                    <option value="3 Años"
                                                         {{ $employee->experience == '3 Años' ? 'selected' : '' }}>3 Años
                                                     </option>
-                                                    <option value="4 Year"
+                                                    <option value="4 Años"
                                                         {{ $employee->experience == '4 Años' ? 'selected' : '' }}>4 Años
                                                     </option>
-                                                    <option value="5 Year"
+                                                    <option value="5 Años"
                                                         {{ $employee->experience == '5 Años' ? 'selected' : '' }}>5 Años
                                                     </option>
                                                 </select>
@@ -196,9 +200,10 @@
 
                                     <div class="text-end">
                                         <button type="submit" class="btn btn-success waves-effect waves-light mt-2"><i
-                                                class="mdi mdi-content-save"></i> Save</button>
+                                                class="mdi mdi-content-save"></i> Actualizar</button>
                                     </div>
                                 </form>
+
                             </div>
                             <!-- end settings content-->
 
