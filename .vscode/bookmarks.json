@@ -44,7 +44,7 @@
 					"label": "Toastr Code toster en Head"
 				},
 				{
-					"line": 100,
+					"line": 103,
 					"column": 31,
 					"label": "Toastr Code toster"
 				}
@@ -74,7 +74,12 @@
 			"path": "resources/views/backend/employee/all_employee.blade.php",
 			"bookmarks": [
 				{
-					"line": 54,
+					"line": 55,
+					"column": 46,
+					"label": "money dinero convertir a float con php"
+				},
+				{
+					"line": 57,
 					"column": 46,
 					"label": "money dinero en blade"
 				}

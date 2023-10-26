@@ -98,6 +98,9 @@
         <!-- App js-->
         <script src="{{ asset('backend/assets/js/app.min.js') }}"></script>
        
+
+
+
         <!-- Para DataTables third party js -->
         <script src="{{ asset('backend/assets/libs/datatables.net/js/jquery.dataTables.min.js/') }}"></script>
         <script src="{{ asset('backend/assets/libs/datatables.net-bs5/js/dataTables.bootstrap5.min.js') }}"></script>
@@ -117,6 +120,11 @@
         <!-- Datatables init -->
         <script src="{{ asset('backend/assets/js/pages/datatables.init.js') }}"></script>
         <!-- Para DataTables end -->
+
+
+        {{-- Sweetalert, para mensajes de confirmación en botones de Eliminar en vista --}}
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+        <script src="{{ asset('backend/assets/js/code.js') }}"></script>
 
 
         {{-- Toastr Code toster --}}

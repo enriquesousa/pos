@@ -34,7 +34,7 @@ class EmployeeController extends Controller
                 'email' => 'required|unique:employees|max:200',
                 'phone' => 'required|max:200',
                 'address' => 'required|max:400',
-                'salary' => 'required|max:200',
+                'salary' => 'required|numeric|max:1000000',
                 'vacation' => 'required|max:200',
                 'city' => 'required|max:200',
                 'experience' => 'required',
@@ -181,6 +181,21 @@ class EmployeeController extends Controller
 
     }
 
+    // EmployeeDelete
+    public function EmployeeDelete($id){
+        $employee_img = Employee::findOrFail($id);
+        $img = $employee_img->image;
+        unlink($img);
+
+        Employee::findOrFail($id)->delete();
+
+        $notification = array(
+            'message' => 'Empleado Eliminado Exitosamente',
+            'alert-type' => 'success'
+        );
+
+        return redirect()->back()->with($notification);
+    }
 
 
 

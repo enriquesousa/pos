@@ -25,6 +25,7 @@ class AppServiceProvider extends ServiceProvider
         // To use it in Blade: @convert($var)
         // $@convert($property->max_price)
         Blade::directive('convert', function ($money) {
+            // converts string into float 
             return "<?php echo number_format($money, 2); ?>";
         });
     }

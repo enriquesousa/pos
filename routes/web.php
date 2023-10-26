@@ -56,7 +56,7 @@ Route::middleware(['auth'])->group(function () {
         Route::post('/employee/store', 'EmployeeStore')->name('employee.store');
         Route::get('/employee/edit/{id}', 'EmployeeEdit')->name('employee.edit');
         Route::post('/employee/update', 'EmployeeUpdate')->name('employee.update');
-        // Route::get('/employee/delete/{id}', 'EmployeeDelete')->name('employee.delete');    
+        Route::get('/employee/delete/{id}', 'EmployeeDelete')->name('employee.delete');    
     });
 
 
