@@ -54,7 +54,7 @@
                                         <td>{{ $item->phone }}</td>
                                         <td>$ @convert($item->salary)</td>
                                         <td>
-                                            <a href="" class="btn btn-blue rounded-pill waves-effect waves-light">Editar</a>
+                                            <a href="{{ route('employee.edit', $item->id) }}" class="btn btn-blue rounded-pill waves-effect waves-light">Editar</a>
                                             <a href="" class="btn btn-danger rounded-pill waves-effect waves-light">Eliminar</a>
                                         </td>
                                     </tr>

@@ -6,7 +6,7 @@
 
 <div class="content">
 
-    <!-- Start Content-->
+    <!-- Start Content-->º
     <div class="container-fluid">
 
         <!-- start page title -->
@@ -98,8 +98,8 @@
                                             <input type="text" name="name" class="form-control" value="{{ $adminData->name }}">
                                         </div>
                                     </div>
-
-                                    {{-- Correo Electronico --}}
+                                    
+                                    {{-- Correo Electrónico --}}
                                     <div class="col-md-6">
                                         <div class="mb-3">
                                             <label for="email" class="form-label">Correo Electronico</label>
@@ -107,7 +107,7 @@
                                         </div>
                                     </div> <!-- end col -->
 
-                                    {{-- Telefono --}}
+                                    {{-- Teléfono --}}
                                     <div class="col-md-6">
                                         <div class="mb-3">
                                             <label for="phone" class="form-label">Telefono</label>
