@@ -29,7 +29,7 @@
                 <li>
                     <a href="#sidebarEmpleados" data-bs-toggle="collapse">
                         <i class="mdi mdi-account-multiple-outline"></i>
-                        <span> Control Empleados </span>
+                        <span>Empleados</span>
                         <span class="menu-arrow"></span>
                     </a>
                     <div class="collapse" id="sidebarEmpleados">
@@ -49,7 +49,7 @@
                 <li>
                     <a href="#sidebarClientes" data-bs-toggle="collapse">
                         <i class="mdi mdi-account-multiple-outline"></i>
-                        <span> Control Clientes </span>
+                        <span>Clientes</span>
                         <span class="menu-arrow"></span>
                     </a>
                     <div class="collapse" id="sidebarClientes">
@@ -65,20 +65,20 @@
                 </li>
 
 
-                {{-- CRM --}}
+                {{-- Control de Proveedores --}}
                 <li>
-                    <a href="#sidebarCrm" data-bs-toggle="collapse">
+                    <a href="#sidebarProveedores" data-bs-toggle="collapse">
                         <i class="mdi mdi-account-multiple-outline"></i>
-                        <span> CRM </span>
+                        <span>Proveedores</span>
                         <span class="menu-arrow"></span>
                     </a>
-                    <div class="collapse" id="sidebarCrm">
+                    <div class="collapse" id="sidebarProveedores">
                         <ul class="nav-second-level">
                             <li>
-                                <a href="crm-dashboard.html">Dashboard</a>
+                                <a href="{{ route('all.supplier') }}">Lista de Proveedores</a>
                             </li>
                             <li>
-                                <a href="crm-contacts.html">Contacts</a>
+                                <a href="crm-contacts.html">Agregar Proveedor</a>
                             </li>
                         </ul>
                     </div>
