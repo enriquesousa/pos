@@ -65,9 +65,9 @@ Route::middleware(['auth'])->group(function () {
         Route::get('/all/customer', 'CustomerList')->name('all.customer');
         Route::get('/customer/add', 'CustomerAdd')->name('customer.add');
         Route::post('/customer/store', 'CustomerStore')->name('customer.store');
-        // Route::get('/employee/edit/{id}', 'EmployeeEdit')->name('employee.edit');
-        // Route::post('/employee/update', 'EmployeeUpdate')->name('employee.update');
-        // Route::get('/employee/delete/{id}', 'EmployeeDelete')->name('employee.delete');    
+        Route::get('/customer/edit/{id}', 'CustomerEdit')->name('customer.edit');
+        Route::post('/customer/update', 'CustomerUpdate')->name('customer.update');
+        Route::get('/customer/delete/{id}', 'CustomerDelete')->name('customer.delete');    
     });
 
 
