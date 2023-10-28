@@ -13,7 +13,7 @@
                 <div class="page-title-box">
                     <div class="page-title-right">
                         <ol class="breadcrumb m-0">
-                            <a href="{{ route('customer.add') }}" class="btn btn-primary rounded-pill waves-effect waves-light">Agregar Proveedor</a>
+                            <a href="{{ route('supplier.add') }}" class="btn btn-primary rounded-pill waves-effect waves-light">Agregar Proveedor</a>
                         </ol>
                     </div>
                     <h4 class="page-title">Lista de Proveedores</h4>

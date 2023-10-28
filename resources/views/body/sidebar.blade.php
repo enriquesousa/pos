@@ -78,7 +78,7 @@
                                 <a href="{{ route('all.supplier') }}">Lista de Proveedores</a>
                             </li>
                             <li>
-                                <a href="crm-contacts.html">Agregar Proveedor</a>
+                                <a href="{{ route('supplier.add') }}">Agregar Proveedor</a>
                             </li>
                         </ul>
                     </div>
