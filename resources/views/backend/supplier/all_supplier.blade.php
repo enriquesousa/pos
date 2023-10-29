@@ -55,9 +55,11 @@
                                         <td>{{ $item->type }}</td>
                                        
                                         <td>
-                                            <a href="{{ route('supplier.edit', $item->id) }}" class="btn btn-blue rounded-pill waves-effect waves-light">Editar</a>
-                                            <a href="{{ route('supplier.delete', $item->id) }}" id="delete" class="btn btn-danger rounded-pill waves-effect waves-light">Eliminar</a>
-                                            <a href="{{ route('supplier.detail',$item->id) }}" class="btn btn-info rounded-pill waves-effect waves-light">Detalle</a>
+                                            <a href="{{ route('supplier.edit', $item->id) }}" class="btn btn-blue rounded-pill waves-effect waves-light" title="Editar"><i class="fa fa-pencil" aria-hidden="true"></i></a>
+                                            <a href="{{ route('supplier.delete', $item->id) }}" id="delete" class="btn btn-danger rounded-pill waves-effect waves-light" title="Eliminar"><i class="fa fa-trash" aria-hidden="true"></i>
+                                            </a>
+                                            <a href="{{ route('supplier.detail',$item->id) }}" class="btn btn-info rounded-pill waves-effect waves-light" title="Detalle"><i class="fa fa-eye" aria-hidden="true"></i>
+                                            </a>
                                         </td>
                                     </tr>
 
