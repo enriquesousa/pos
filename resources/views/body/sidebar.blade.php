@@ -88,7 +88,7 @@
                 <li>
                     <a href="#sidebarSalario" data-bs-toggle="collapse">
                         <i class="mdi mdi-account-multiple-outline"></i>
-                        <span>Salario de Empleados</span>
+                        <span>Salario Empleados</span>
                         <span class="menu-arrow"></span>
                     </a>
                     <div class="collapse" id="sidebarSalario">
