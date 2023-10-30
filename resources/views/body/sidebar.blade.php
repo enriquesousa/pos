@@ -84,6 +84,25 @@
                     </div>
                 </li>
 
+                {{-- Salario de Empleados --}}
+                <li>
+                    <a href="#sidebarSalario" data-bs-toggle="collapse">
+                        <i class="mdi mdi-account-multiple-outline"></i>
+                        <span>Salario de Empleados</span>
+                        <span class="menu-arrow"></span>
+                    </a>
+                    <div class="collapse" id="sidebarSalario">
+                        <ul class="nav-second-level">
+                            <li>
+                                <a href="{{ route('all.supplier') }}">Lista Salarios</a>
+                            </li>
+                            <li>
+                                <a href="{{ route('add.advance.salary') }}">Agregar Salario</a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+
                 {{-- Email --}}
                 <li>
                     <a href="#sidebarEmail" data-bs-toggle="collapse">

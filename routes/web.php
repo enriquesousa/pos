@@ -7,6 +7,7 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\Backend\EmployeeController;
 use App\Http\Controllers\Backend\CustomerController;
 use App\Http\Controllers\Backend\SupplierController;
+use App\Http\Controllers\Backend\SalaryController;
 
 
 /*
@@ -79,6 +80,17 @@ Route::middleware(['auth'])->group(function () {
         Route::post('/supplier/update', 'SupplierUpdate')->name('supplier.update');
         Route::get('/supplier/delete/{id}', 'SupplierDelete')->name('supplier.delete');
         Route::get('/supplier/detail/{id}', 'SupplierDetail')->name('supplier.detail');
+    });
+
+    // Rutas Advance Salary
+    Route::controller(SalaryController::class)->group(function () {
+        Route::get('/add/advance/salary', 'AddAdvanceSalary')->name('add.advance.salary');
+        // Route::get('/supplier/add', 'SupplierAdd')->name('supplier.add');
+        // Route::post('/supplier/store', 'SupplierStore')->name('supplier.store');
+        // Route::get('/supplier/edit/{id}', 'SupplierEdit')->name('supplier.edit');
+        // Route::post('/supplier/update', 'SupplierUpdate')->name('supplier.update');
+        // Route::get('/supplier/delete/{id}', 'SupplierDelete')->name('supplier.delete');
+        // Route::get('/supplier/detail/{id}', 'SupplierDetail')->name('supplier.detail');
     });
 
 
