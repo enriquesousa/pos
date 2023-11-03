@@ -106,7 +106,7 @@
                                         </div>
 
 
-                                        {{-- Salario Avanzado --}}
+                                        {{-- Salario Avanzado 'advance_salary' --}}
                                         <div class="col-md-6">
                                             <div class="mb-3">
                                                 <label for="advance_salary" class="form-label">Salario Avanzado</label>
