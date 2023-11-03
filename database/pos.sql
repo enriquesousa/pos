@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Oct 28, 2023 at 10:11 PM
+-- Generation Time: Nov 03, 2023 at 05:21 PM
 -- Server version: 10.11.4-MariaDB-1~deb12u1
 -- PHP Version: 8.2.7
 
@@ -20,6 +20,32 @@ SET time_zone = "+00:00";
 --
 -- Database: `pos`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `advance_salaries`
+--
+
+CREATE TABLE `advance_salaries` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `employee_id` int(11) NOT NULL,
+  `month` varchar(255) DEFAULT NULL,
+  `year` varchar(255) DEFAULT NULL,
+  `advance_salary` varchar(255) DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `advance_salaries`
+--
+
+INSERT INTO `advance_salaries` (`id`, `employee_id`, `month`, `year`, `advance_salary`, `created_at`, `updated_at`) VALUES
+(1, 10, 'Febrero', '2023', '2000', '2023-10-31 08:22:36', NULL),
+(2, 9, 'Enero', '2023', '5000', '2023-10-31 08:24:58', NULL),
+(3, 8, 'Enero', '2023', '9500', '2023-10-31 08:25:35', NULL),
+(4, 6, 'Enero', '2023', '5500', '2023-10-31 08:26:15', NULL);
 
 -- --------------------------------------------------------
 
@@ -50,7 +76,16 @@ CREATE TABLE `customers` (
 
 INSERT INTO `customers` (`id`, `name`, `email`, `phone`, `address`, `shopname`, `image`, `account_holder`, `account_number`, `bank_name`, `bank_branch`, `city`, `created_at`, `updated_at`) VALUES
 (1, 'Jonas Banks', 'ruxuryru@mailinator.com', '+1 (858) 768-7855', 'Sed fugit consectet', 'Shaine Browning', 'upload/customer/1780935966691541.png', 'Jonas Banks', '456456456', 'Santander', 'La Mesa', 'Tijuana, BC', '2023-10-28 01:54:50', '2023-10-28 01:54:50'),
-(2, 'Uriel Crane', 'ruxyryfo@mailinator.com', '+1 (579) 569-1913', 'ARTICULO 27 NO. 4100 7, A. CONSTITUCION', 'Carter Savage', 'upload/customer/1780935777498890.jpg', 'Uriel Crane', '599876A', 'Garrison Rocha', 'Beatae consequatur', 'Consectetur sunt par', '2023-10-28 01:53:48', '2023-10-28 01:53:48');
+(2, 'Uriel Crane', 'ruxyryfo@mailinator.com', '+1 (579) 569-1913', 'ARTICULO 27 NO. 4100 7, A. CONSTITUCION', 'Carter Savage', 'upload/customer/1780935777498890.jpg', 'Uriel Crane', '599876A', 'Garrison Rocha', 'Beatae consequatur', 'Consectetur sunt par', '2023-10-28 01:53:48', '2023-10-28 01:53:48'),
+(4, 'Chiquita Peck', 'ligezinaq@mailinator.com', '+1 (828) 422-6711', '68 Green Old Extension', 'Paki Mcintyre', 'upload/customer/1781141949718532.jpg', 'Chiquita Peck', '574', 'Samson Estrada', 'Rerum quos placeat', 'Tijuana, BC', '2023-10-30 08:28:51', NULL),
+(5, 'Cheryl Herrera', 'tenewet@mailinator.com', '+1 (692) 696-4726', '97 East White Second Extension', 'Wesley Lott', 'upload/customer/1781141990576246.jpg', 'Cheryl Herrera', '908', 'Ruth Ferguson', 'Ipsum dolore dolore', 'Tijuana, BC', '2023-10-30 08:29:30', NULL),
+(6, 'Jack Rose', 'tuketikuw@mailinator.com', '+1 (248) 551-5772', '17 West Milton Extension', 'Kelsie Goodman', 'upload/customer/1781142027670086.jpeg', 'Jack Rose', '157', 'Beverly Austin', 'Pariatur Ullamco te', 'Mexicali B.C.', '2023-10-30 08:30:05', NULL),
+(7, 'Leigh Thompson', 'hycehocyd@mailinator.com', '+1 (381) 957-6672', '729 South Milton Parkway', 'Blaze Bowman', 'upload/customer/1781142117615006.jpg', 'Leigh Thompson', '177', 'Abdul Cummings', 'Nobis nihil accusamue', 'Ensenada BC', '2023-10-30 08:31:31', NULL),
+(8, 'Olga Roth', 'vydyxol@mailinator.com', '+1 (845) 712-8225', '221 West Milton Drive', 'Lael Stone', 'upload/customer/1781142141173818.jpg', 'Olga Roth', '120', 'Cherokee Sutton', 'Explicabo Reiciendi', 'Tijuana, BC', '2023-10-30 08:31:53', NULL),
+(9, 'Dawn Foster', 'syxovy@mailinator.com', '+1 (845) 479-3775', '61 South Cowley Street', 'Colette Schneider', 'upload/customer/1781142177240484.jpg', 'Dawn Foster', '217', 'Nehru Landry', 'Nostrum impedit sun', 'Ensenada BC', '2023-10-30 08:32:28', NULL),
+(10, 'Tyler Hamilton', 'coxyha@mailinator.com', '+1 (171) 656-4716', '407 New Boulevard', 'Liberty Vaughn', 'upload/customer/1781142326903221.jpg', 'Tyler Hamilton', '304', 'John Bowen', 'Aut placeat dolorib', 'Tijuana, BC', '2023-10-30 08:34:51', NULL),
+(11, 'Brady Morse', 'wodagiha@mailinator.com', '+1 (269) 159-6208', '28 Nobel Court', 'Odysseus Daniel', 'upload/customer/1781142361936361.jpg', 'Brady Morse', '685', 'Brandon Gonzalez', 'Magna ut ut nisi lau', 'Mexicali B.C.', '2023-10-30 08:35:24', NULL),
+(12, 'Herman Houston', 'cirakylef@mailinator.com', '+1 (581) 739-7039', '99 Milton Drive', 'Kylan Berry', 'upload/customer/1781142391989142.jpg', 'Herman Houston', '736', 'Upton Cabrera', 'Labore facilis volup', 'Tijuana, BC', '2023-10-30 08:35:53', NULL);
 
 -- --------------------------------------------------------
 
@@ -79,7 +114,13 @@ CREATE TABLE `employees` (
 
 INSERT INTO `employees` (`id`, `name`, `email`, `phone`, `address`, `experience`, `image`, `salary`, `vacation`, `city`, `created_at`, `updated_at`) VALUES
 (1, 'Carmen Landry', 'mynejoq@mailinator.com', '+1 (411) 804-5305', 'ANT CARR A CHAPALA NUM 2748, ALAMO INDUSTRIAL, 45560', '2 Años', 'upload/employee/1780783815232879.jpg', '5600', '2', 'Guadalajara, Jalisco', '2023-10-26 09:36:43', '2023-10-26 09:36:43'),
-(2, 'Declan Joyner', 'soxu@mailinator.com', '+1 (296) 566-5094', 'ARTICULO 27 NO. 4100 7, A. CONSTITUCION', '3 Años', 'upload/employee/1780783783222954.jpg', '2500', '3', 'Tijuana, BC', '2023-10-26 09:35:57', '2023-10-26 09:35:57');
+(2, 'Declan Joyner', 'soxu@mailinator.com', '+1 (296) 566-5094', 'ARTICULO 27 NO. 4100 7, A. CONSTITUCION', '3 Años', 'upload/employee/1781107929559108.jpg', '2500', '3', 'Tijuana, BC', '2023-10-29 23:28:07', '2023-10-29 23:28:07'),
+(5, 'Carolyn Norris', 'loxopujen@mailinator.com', '+1 (944) 523-9006', '60 North Nobel Street', '2 Años', 'upload/employee/1781141596546228.jpg', '720', '2', 'Tijuana, BC', '2023-10-30 08:23:14', NULL),
+(6, 'Jena Kelly', 'kyqovy@mailinator.com', '+1 (891) 205-4017', '921 Rocky New Lane', '3 Años', 'upload/employee/1781141644022694.jpg', '527', '3', 'Rosarito BC', '2023-10-30 08:23:59', NULL),
+(7, 'Shellie Hester', 'xacofud@mailinator.com', '+1 (521) 358-1249', '318 Old Extension', '5 Años', 'upload/employee/1781141701407182.jpg', '460', '4', 'Ensenada BC', '2023-10-30 08:24:54', NULL),
+(8, 'Regan Johns', 'kidabu@mailinator.com', '+1 (453) 941-2024', '994 Cowley Drive', '1 Año', 'upload/employee/1781141815037667.jpg', '327', '1', 'Tijuana, BC', '2023-10-30 08:26:42', NULL),
+(9, 'Coby Mays', 'kymuqi@mailinator.com', '+1 (591) 386-4277', '476 East White Cowley Freeway', '2 Años', 'upload/employee/1781141851771376.jpg', '300', '2', 'Mexicali B.C.', '2023-10-30 08:27:17', NULL),
+(10, 'Quentin Wilcox', 'juqalov@mailinator.com', '+1 (836) 541-2163', '54 Cowley Freeway', '2 Años', 'upload/employee/1781141879793564.jpg', '617', '1', 'Mexicali B.C.', '2023-10-30 08:27:44', NULL);
 
 -- --------------------------------------------------------
 
@@ -120,7 +161,8 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 (4, '2019_12_14_000001_create_personal_access_tokens_table', 1),
 (5, '2023_10_23_040402_create_employees_table', 2),
 (6, '2023_10_26_150601_create_customers_table', 3),
-(7, '2023_10_27_213511_create_suppliers_table', 4);
+(7, '2023_10_27_213511_create_suppliers_table', 4),
+(8, '2023_10_30_014651_create_advance_salaries_table', 5);
 
 -- --------------------------------------------------------
 
@@ -183,7 +225,9 @@ CREATE TABLE `suppliers` (
 
 INSERT INTO `suppliers` (`id`, `name`, `email`, `phone`, `address`, `shopname`, `image`, `type`, `account_holder`, `account_number`, `bank_name`, `bank_branch`, `city`, `created_at`, `updated_at`) VALUES
 (1, 'Haley Mitchell', 'fudequbej@mailinator.com', '+1 (215) 571-8418', 'Doloribus pariatur', 'Melvin Walsh', 'upload/supplier/1781019150176655.jpg', 'Distribuidor', 'Vitae quia excepteur', '45665489', 'Santander', 'La Mesa', 'Tijuana, BC', '2023-10-28 23:57:00', NULL),
-(3, 'Tad Cantu', 'pafarobu@mailinator.com', '+1 (879) 976-6713', 'Eligendi labore esse', 'Colton Mcconnell', 'upload/supplier/1781025474508581.jpg', 'Mayorista', 'Qui vero consequatur', '396', 'Jena Robertson', 'Porro non assumenda', 'Eu tempora deserunt', '2023-10-29 01:37:31', NULL);
+(3, 'Tad Cantu Group', 'pafarobu@mailinator.com', '+1 (879) 976-6713', 'Eligendi labore esse', 'Colton Mcconnell', 'upload/supplier/1781025474508581.jpg', 'Mayorista', 'Qui vero consequatur', '396', 'Jena Robertson', 'Porro non assumenda', 'Eu tempora deserunt', '2023-10-29 23:27:03', '2023-10-29 23:27:03'),
+(4, 'Geoffrey Dotson', 'nikozuwe@mailinator.com', '+1 (257) 737-6012', '20 Hague Lane', 'Jack Riley', 'upload/supplier/1781142231965594.jpg', 'Distribuidor', 'Geoffrey Dotson', '415', 'Rana Lyons', 'Dignissimos laudanti', 'Tijuana, BC', '2023-10-30 08:33:20', NULL),
+(5, 'Seth Baird', 'pybelaral@mailinator.com', '+1 (594) 839-5712', '873 West Oak Court', 'Quinlan Nelson', 'upload/supplier/1781142270314764.jpg', 'Mayorista', 'Seth Baird', '919', 'Willow Golden', 'Quae fugiat voluptat', 'Ensenada BC', '2023-10-30 08:33:57', NULL);
 
 -- --------------------------------------------------------
 
@@ -215,6 +259,12 @@ INSERT INTO `users` (`id`, `name`, `email`, `phone`, `photo`, `email_verified_at
 --
 -- Indexes for dumped tables
 --
+
+--
+-- Indexes for table `advance_salaries`
+--
+ALTER TABLE `advance_salaries`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `customers`
@@ -273,16 +323,22 @@ ALTER TABLE `users`
 --
 
 --
+-- AUTO_INCREMENT for table `advance_salaries`
+--
+ALTER TABLE `advance_salaries`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
+--
 -- AUTO_INCREMENT for table `customers`
 --
 ALTER TABLE `customers`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT for table `employees`
 --
 ALTER TABLE `employees`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT for table `failed_jobs`
@@ -294,7 +350,7 @@ ALTER TABLE `failed_jobs`
 -- AUTO_INCREMENT for table `migrations`
 --
 ALTER TABLE `migrations`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `personal_access_tokens`
@@ -306,7 +362,7 @@ ALTER TABLE `personal_access_tokens`
 -- AUTO_INCREMENT for table `suppliers`
 --
 ALTER TABLE `suppliers`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `users`

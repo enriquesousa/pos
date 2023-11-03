@@ -92,6 +92,7 @@ Route::middleware(['auth'])->group(function () {
         // Route::get('/supplier/detail/{id}', 'SupplierDetail')->name('supplier.detail');
     });
 
+    
 
 
 });
