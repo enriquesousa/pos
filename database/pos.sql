@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Nov 03, 2023 at 05:21 PM
+-- Generation Time: Dec 29, 2023 at 03:17 AM
 -- Server version: 10.11.4-MariaDB-1~deb12u1
 -- PHP Version: 8.2.7
 
@@ -29,7 +29,7 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `advance_salaries` (
   `id` bigint(20) UNSIGNED NOT NULL,
-  `employee_id` int(11) NOT NULL,
+  `employee_id` bigint(11) UNSIGNED NOT NULL,
   `month` varchar(255) DEFAULT NULL,
   `year` varchar(255) DEFAULT NULL,
   `advance_salary` varchar(255) DEFAULT NULL,
@@ -43,9 +43,9 @@ CREATE TABLE `advance_salaries` (
 
 INSERT INTO `advance_salaries` (`id`, `employee_id`, `month`, `year`, `advance_salary`, `created_at`, `updated_at`) VALUES
 (1, 10, 'Febrero', '2023', '2000', '2023-10-31 08:22:36', NULL),
-(2, 9, 'Enero', '2023', '5000', '2023-10-31 08:24:58', NULL),
 (3, 8, 'Enero', '2023', '9500', '2023-10-31 08:25:35', NULL),
-(4, 6, 'Enero', '2023', '5500', '2023-10-31 08:26:15', NULL);
+(4, 6, 'Enero', '2023', '5500', '2023-10-31 08:26:15', NULL),
+(5, 9, 'Diciembre', '2023', '7000', '2023-12-29 02:53:52', '2023-12-29 02:53:52');
 
 -- --------------------------------------------------------
 
@@ -264,7 +264,8 @@ INSERT INTO `users` (`id`, `name`, `email`, `phone`, `photo`, `email_verified_at
 -- Indexes for table `advance_salaries`
 --
 ALTER TABLE `advance_salaries`
-  ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `employee_id` (`employee_id`);
 
 --
 -- Indexes for table `customers`
@@ -326,7 +327,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `advance_salaries`
 --
 ALTER TABLE `advance_salaries`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `customers`
@@ -369,6 +370,16 @@ ALTER TABLE `suppliers`
 --
 ALTER TABLE `users`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- Constraints for dumped tables
+--
+
+--
+-- Constraints for table `advance_salaries`
+--
+ALTER TABLE `advance_salaries`
+  ADD CONSTRAINT `advance_salaries_ibfk_1` FOREIGN KEY (`employee_id`) REFERENCES `employees` (`id`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
