@@ -14,11 +14,11 @@
                     <div class="page-title-box">
                         <div class="page-title-right">
                             <ol class="breadcrumb m-0">
-                                <li class="breadcrumb-item"><a href="javascript: void(0);">Agregar Salario Avanzado</a></li>
+                                <li class="breadcrumb-item"><a href="javascript: void(0);">Avance de Salario</a></li>
 
                             </ol>
                         </div>
-                        <h4 class="page-title">Agregar Salario Avanzado</h4>
+                        <h4 class="page-title">Avance de Salario</h4>
                     </div>
                 </div>
             </div>
@@ -36,12 +36,12 @@
                                     @csrf
 
                                     <h5 class="mb-4 text-uppercase"><i class="mdi mdi-account-circle me-1"></i>Agregar
-                                        Salario Avanzado
+                                        Avance de Salario
                                     </h5>
 
                                     <div class="row">
 
-                                        {{-- Select Nombre Empleado 'employee_id' --}}
+                                        {{-- Seleccionar Nombre Empleado 'employee_id' --}}
                                         <div class="col-md-6">
                                             <div class="mb-3">
                                                 <label for="employee_id" class="form-label">Seleccionar Empleado</label>
@@ -60,11 +60,11 @@
                                         {{-- Seleccionar Mes 'month' --}}
                                         <div class="col-md-6">
                                             <div class="mb-3">
-                                                <label for="month" class="form-label">Salario Mensual</label>
+                                                <label for="month" class="form-label">Mes del Salario</label>
                                                 <select name="month"
                                                     class="form-select @error('month') is-invalid @enderror"
                                                     id="example-select">
-                                                    <option selected disabled>Select Month </option>
+                                                    <option selected disabled>Seleccionar Mes</option>
                                                     <option value="Enero">Enero</option>
                                                     <option value="Febrero">Febrero</option>
                                                     <option value="Marzo">Marzo</option>
@@ -109,7 +109,7 @@
                                         {{-- Salario Avanzado 'advance_salary' --}}
                                         <div class="col-md-6">
                                             <div class="mb-3">
-                                                <label for="advance_salary" class="form-label">Salario Avanzado</label>
+                                                <label for="advance_salary" class="form-label">Avance de Salario</label>
                                                 <input type="text" name="advance_salary"
                                                     class="form-control @error('advance_salary') is-invalid @enderror">
                                                 @error('advance_salary')

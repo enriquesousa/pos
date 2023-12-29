@@ -13,10 +13,10 @@
                 <div class="page-title-box">
                     <div class="page-title-right">
                         <ol class="breadcrumb m-0">
-                            <a href="{{ route('employee.add') }}" class="btn btn-primary rounded-pill waves-effect waves-light">Agregar Empleado</a>
+                            <a href="{{ route('add.advance.salary') }}" class="btn btn-primary rounded-pill waves-effect waves-light">Agregar Salario</a>
                         </ol>
                     </div>
-                    <h4 class="page-title">Lista de Empleados</h4>
+                    <h4 class="page-title">Lista de Salarios en Avance</h4>
                 </div>
             </div>
         </div>     
@@ -35,9 +35,10 @@
                                     <th>Serie</th>
                                     <th>Imagen</th>
                                     <th>Nombre</th>
-                                    <th>Correo</th>
-                                    <th>Teléfono</th>
-                                    <th>Sueldo</th>
+                                    <th>Mes</th>
+                                    <th>Año</th>
+                                    <th>Salario</th>
+                                    <th>Avance</th>
                                     <th>Acción</th>
                                 </tr>
                             </thead>
@@ -45,20 +46,29 @@
                         
                             <tbody>
 
-                                @foreach ($employee as $key => $item)
+                                @foreach ($salary as $key => $item)
                                     <tr>
                                         <td>{{ $key + 1 }}</td>
-                                        <td><img src="{{ asset($item->image) }}" style="width: 50px; height: 40px;"></td>
-                                        <td>{{ $item->name }}</td>
-                                        <td>{{ $item->email }}</td>
-                                        <td>{{ $item->phone }}</td>
+                                        <td><img src="{{ asset($item->employee->image) }}" style="width: 50px; height: 40px;"></td>
+                                        <td>{{ $item->employee->name }}</td>
+                                        <td>{{ $item->month }}</td>
+                                        <td>{{ $item->year }}</td>
+
+                                        {{-- Salario --}}
                                         @php
-                                            $floatvar =  floatval($item->salary); 
+                                            $floatVar =  floatval($item->employee->salary); 
                                         @endphp
-                                        <td>$ @convert($floatvar)</td>
+                                        <td>$ @convert($floatVar)</td>
+
+                                        {{-- Avance de Salario--}}
+                                        @php
+                                            $floatVar =  floatval($item->advance_salary); 
+                                        @endphp
+                                        <td>$ @convert($floatVar)</td>
+
                                         <td>
-                                            <a href="{{ route('employee.edit', $item->id) }}" class="btn btn-blue rounded-pill waves-effect waves-light">Editar</a>
-                                            <a href="{{ route('employee.delete', $item->id) }}" id="delete" class="btn btn-danger rounded-pill waves-effect waves-light">Eliminar</a>
+                                            <a href="{{ route('edit.advance.salary', $item->id) }}" class="btn btn-blue rounded-pill waves-effect waves-light">Editar</a>
+                                            <a href="{{ route('delete.advance.salary', $item->id) }}" id="delete" class="btn btn-danger rounded-pill waves-effect waves-light">Eliminar</a>
                                         </td>
                                     </tr>
 
