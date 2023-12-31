@@ -7,10 +7,14 @@ use Illuminate\Http\Request;
 
 use App\Models\AdvanceSalary;
 use App\Models\Employee;
+use App\Models\PaySalary;
 use Carbon\Carbon;
 
 class SalaryController extends Controller
 {
+
+    //////////////////////// Métodos de Avance de Salario /////////////////
+
     // AddAdvanceSalary
     public function AddAdvanceSalary()
     {
@@ -86,6 +90,7 @@ class SalaryController extends Controller
         return view('backend.salary.edit_advance_salary', compact('salary', 'employee'));
     }
 
+    // AdvanceSalaryUpdate
     public function AdvanceSalaryUpdate(Request $request){
 
         $salary_id = $request->id;
@@ -106,6 +111,7 @@ class SalaryController extends Controller
        return redirect()->route('all.advance.salary')->with($notification);
     }
 
+    // AdvanceSalaryDelete
     public function AdvanceSalaryDelete($id){
 
         AdvanceSalary::findOrFail($id)->delete();
@@ -118,6 +124,13 @@ class SalaryController extends Controller
         return redirect()->back()->with($notification);
     }
 
+
+    //////////////////////// Métodos de Pagos de Salario /////////////////
+
+    public function PaySalary(){
+        $employee = Employee::latest()->get();
+        return view('backend.salary.pay_salary',compact('employee'));
+    }
 
 
 }

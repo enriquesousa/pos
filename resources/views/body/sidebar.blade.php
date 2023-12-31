@@ -93,12 +93,17 @@
                     </a>
                     <div class="collapse" id="sidebarSalario">
                         <ul class="nav-second-level">
+
                             <li>
                                 <a href="{{ route('all.advance.salary') }}">Lista Salarios</a>
                             </li>
                             <li>
                                 <a href="{{ route('add.advance.salary') }}">Agregar Salario</a>
                             </li>
+                            <li>
+                                <a href="{{ route('pay.salary') }}">Salarios Pagados</a>
+                            </li>
+
                         </ul>
                     </div>
                 </li>
